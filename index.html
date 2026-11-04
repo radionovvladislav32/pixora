@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PIXORA — сайты на заказ</title>
+  <meta name="description" content="PIXORA делает сайты на заказ: лендинги, сайты компаний, магазины и сервисы. Срок и стоимость фиксируются до старта. Оформите заказ онлайн.">
+  <meta name="theme-color" content="#efeae2">
+  <meta property="og:title" content="PIXORA — сайты на заказ">
+  <meta property="og:description" content="Студия сайтов на заказ. Смета и срок фиксируются до старта.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#order">Перейти к заказу</a>
+  <div class="rail" aria-hidden="true">PIXORA — сайты на заказ — est. 2026</div>
+
+  <header class="site-header">
+    <div class="wrap header-bar">
+      <a class="logo" href="#top">
+        <span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>PIXORA</span>
+      </a>
+      <nav class="desk-nav" aria-label="Разделы">
+        <a href="#services">Услуги</a>
+        <a href="#process">Процесс</a>
+        <a href="#work">Задачи</a>
+      </nav>
+      <a class="btn btn-ink header-cta" href="#order">
+        <span class="full">Оформить заказ</span>
+        <span class="short">Заказ</span>
+      </a>
+      <button class="burger" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Меню">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div id="nav-panel" class="nav-panel" hidden>
+    <a href="#services">Услуги</a>
+    <a href="#process">Процесс</a>
+    <a href="#work">Задачи</a>
+    <a href="#order">Заказ</a>
+    <a href="#faq">Вопросы</a>
+  </div>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Студия сайтов на заказ</p>
+          <h1>Сайты на заказ.<br><em>Смета до старта.</em></h1>
+          <p class="lede">Проектируем, собираем и запускаем сайты под задачу компании. В заказе фиксируем страницы, срок и стоимость — до первой строки кода.</p>
+          <div class="hero-actions">
+            <a class="btn btn-ink" href="#order">Оформить заказ</a>
+            <a class="btn btn-ghost" href="#process">Как мы работаем</a>
+          </div>
+          <ul class="facts">
+            <li><strong>4 формата</strong><span>от лендинга до сервиса</span></li>
+            <li><strong>Смета раньше кода</strong><span>цена и срок в заказе</span></li>
+            <li><strong>После запуска</strong><span>две недели правок входят в работу</span></li>
+          </ul>
+        </div>
+
+        <aside class="ticket" aria-label="Пример состава заказа">
+          <div class="ticket-top">
+            <span>Пример заказа</span>
+            <span>PX–204</span>
+          </div>
+          <dl>
+            <div><dt>Формат</dt><dd>Сайт компании</dd></div>
+            <div><dt>Объём</dt><dd>6 страниц</dd></div>
+            <div><dt>Состав</dt><dd>Дизайн, код, формы</dd></div>
+            <div><dt>Срок</dt><dd>3–5 недель</dd></div>
+            <div><dt>Старт</dt><dd>от 39&nbsp;000&nbsp;₽</dd></div>
+          </dl>
+          <p class="stamp"><span>Смета</span></p>
+        </aside>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>Лендинги</span>
+          <span>Сайты компаний</span>
+          <span>Магазины</span>
+          <span>Сервисы</span>
+          <span>Дизайн</span>
+          <span>Вёрстка</span>
+          <span>Запуск</span>
+          <span>Поддержка</span>
+        </div>
+        <div class="marquee-group">
+          <span>Лендинги</span>
+          <span>Сайты компаний</span>
+          <span>Магазины</span>
+          <span>Сервисы</span>
+          <span>Дизайн</span>
+          <span>Вёрстка</span>
+          <span>Запуск</span>
+          <span>Поддержка</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="services" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="index">01 — Услуги</p>
+          <div>
+            <h2>Четыре формата работ</h2>
+            <p class="lede">Сначала задача, потом экраны. Выберите близкий формат — в заказе его можно уточнить.</p>
+          </div>
+        </div>
+        <ul class="service-list">
+          <li>
+            <a class="service" href="#order" data-pick="landing">
+              <span class="service-num">01</span>
+              <span class="service-main">
+                <span class="service-title">Лендинг</span>
+                <span class="service-text">Один сценарий: оффер, доказательства, заявка. Для запуска услуги, события или продукта.</span>
+              </span>
+              <span class="service-meta">
+                <span>от 19&nbsp;000&nbsp;₽</span>
+                <span>10–14 дней</span>
+              </span>
+              <span class="service-go">Заказать</span>
+            </a>
+          </li>
+          <li>
+            <a class="service" href="#order" data-pick="company">
+              <span class="service-num">02</span>
+              <span class="service-main">
+                <span class="service-title">Сайт компании</span>
+                <span class="service-text">Главная, услуги, кейсы, контакты. Понятная структура для клиента и для поиска.</span>
+              </span>
+              <span class="service-meta">
+                <span>от 39&nbsp;000&nbsp;₽</span>
+                <span>3–5 недель</span>
+              </span>
+              <span class="service-go">Заказать</span>
+            </a>
+          </li>
+          <li>
+            <a class="service" href="#order" data-pick="shop">
+              <span class="service-num">03</span>
+              <span class="service-main">
+                <span class="service-title">Интернет-магазин</span>
+                <span class="service-text">Каталог, карточка, корзина и оплата. Подключим платёжную систему и кабинет заказа.</span>
+              </span>
+              <span class="service-meta">
+                <span>от 89&nbsp;000&nbsp;₽</span>
+                <span>4–7 недель</span>
+              </span>
+              <span class="service-go">Заказать</span>
+            </a>
+          </li>
+          <li>
+            <a class="service" href="#order" data-pick="service">
+              <span class="service-num">04</span>
+              <span class="service-main">
+                <span class="service-title">Веб-сервис</span>
+                <span class="service-text">Кабинеты, роли, заявки, интеграции. Когда сайту нужно уметь больше, чем показывать страницы.</span>
+              </span>
+              <span class="service-meta">
+                <span>от 129&nbsp;000&nbsp;₽</span>
+                <span>от 6 недель</span>
+              </span>
+              <span class="service-go">Заказать</span>
+            </a>
+          </li>
+        </ul>
+        <p class="price-note">Старт ниже обычной вилки студий: лендинг на рынке часто от 30&nbsp;000&nbsp;₽, магазин — от 150&nbsp;000&nbsp;₽. Суммы — нижняя граница, если тексты, фото и логотип уже готовы. Копирайт, съёмка и сложные интеграции считаются отдельно и видны в смете до старта.</p>
+      </div>
+    </section>
+
+    <section id="process" class="section section-tight">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="index">02 — Процесс</p>
+          <div>
+            <h2>Как идёт заказ</h2>
+            <p class="lede">Пять шагов. На каждом видно, что уже сделано и что будет дальше.</p>
+          </div>
+        </div>
+        <ol class="process-list">
+          <li>
+            <span class="step-num">01</span>
+            <h3>Бриф</h3>
+            <p>Форма на этой странице и пара уточнений. Фиксируем цель, аудиторию и что считаем готовым результатом.</p>
+          </li>
+          <li>
+            <span class="step-num">02</span>
+            <h3>Смета</h3>
+            <p>Список страниц, срок и стоимость. Любое расширение — отдельной строкой, до того как оно попадёт в работу.</p>
+          </li>
+          <li>
+            <span class="step-num">03</span>
+            <h3>Прототип</h3>
+            <p>Схема экранов. На ней видно путь человека: от первого экрана до заявки.</p>
+          </li>
+          <li>
+            <span class="step-num">04</span>
+            <h3>Сборка</h3>
+            <p>Дизайн и код. Показываем промежуточные версии по ходу, а не один раз в конце.</p>
+          </li>
+          <li>
+            <span class="step-num">05</span>
+            <h3>Запуск</h3>
+            <p>Проверяем формы, подключаем домен и передаём сайт. Две недели правок после запуска входят в заказ.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="work" class="section work">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="index">03 — Масштаб</p>
+          <div>
+            <h2>Три размера задачи</h2>
+            <p class="lede">Так выглядит заказ разного объёма — от одной страницы до каталога. Это ориентиры, не чужие логотипы.</p>
+          </div>
+        </div>
+        <div class="work-grid">
+          <article class="case case-feature">
+            <div class="visual visual-route" aria-hidden="true">
+              <svg viewBox="0 0 360 280" preserveAspectRatio="xMidYMid slice">
+                <path d="M0 40H360M0 120H360M0 200H360M40 0V280M140 0V280M240 0V280M340 0V280" stroke="rgba(243,239,230,0.1)"/>
+                <path d="M36 210C78 210 96 78 154 78C214 78 230 168 324 124" stroke="#f3efe6" stroke-width="1.6" fill="none"/>
+                <circle cx="36" cy="210" r="5" fill="#e23c1e"/>
+                <circle cx="154" cy="78" r="4" fill="#f3efe6"/>
+                <circle cx="324" cy="124" r="4" fill="#f3efe6"/>
+              </svg>
+              <span class="visual-label">Одна страница</span>
+            </div>
+            <div class="case-body">
+              <p class="case-kicker">Лендинг · около 2 недель</p>
+              <h3>Городская доставка</h3>
+              <p>Тарифы, схема зон и расчёт стоимости. Заявка уходит менеджеру, личного кабинета в этом объёме нет.</p>
+            </div>
+          </article>
+          <article class="case">
+            <div class="visual visual-type" aria-hidden="true">
+              <span>Aa</span>
+              <span class="visual-label visual-label-ink">6 страниц</span>
+            </div>
+            <div class="case-body">
+              <p class="case-kicker">Сайт компании · 3–5 недель</p>
+              <h3>Мастерская</h3>
+              <p>Главная, услуги, работы, подход, контакты и запись. Тексты и фото приходят от заказчика.</p>
+            </div>
+          </article>
+          <article class="case">
+            <div class="visual visual-grid" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+              <span class="visual-label">Каталог</span>
+            </div>
+            <div class="case-body">
+              <p class="case-kicker">Магазин · 4–7 недель</p>
+              <h3>Мебель на заказ</h3>
+              <p>Фильтр по типу изделия, карточка с материалами и заявка на расчёт. Цену называет менеджер.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="order" class="section">
+      <div class="wrap order-layout">
+        <div class="order-intro">
+          <p class="index">04 — Заказ</p>
+          <h2>Оформить заказ</h2>
+          <p class="lede">Четыре коротких шага. Заявка останется в этом браузере, а письмо с текстом можно открыть в почте.</p>
+          <ol class="after">
+            <li>Сохраняем состав заказа на этом устройстве.</li>
+            <li>Готовим письмо на <a data-studio-email href="mailto:hello@pixora.studio">hello@pixora.studio</a>.</li>
+            <li>Уточняем детали и присылаем смету со сроком.</li>
+            <li>Стартуем после вашего подтверждения.</li>
+          </ol>
+          <p class="direct">Можно написать напрямую: <a data-studio-email href="mailto:hello@pixora.studio">hello@pixora.studio</a></p>
+        </div>
+
+        <div class="panel">
+          <noscript>
+            <p class="noscript">Чтобы собрать заказ по шагам, включите JavaScript. Письмо на почту студии можно отправить и без формы.</p>
+          </noscript>
+          <form id="order-form" novalidate>
+            <ol class="progress" id="progress">
+              <li data-step="1"><button type="button" data-goto="1">Тип</button></li>
+              <li data-step="2"><button type="button" data-goto="2">Рамки</button></li>
+              <li data-step="3"><button type="button" data-goto="3">Контакты</button></li>
+              <li data-step="4"><button type="button" data-goto="4">Проверка</button></li>
+            </ol>
+
+            <div class="step" data-step="1">
+              <h3 class="step-title">Какой сайт нужен?</h3>
+              <p class="step-help">Выберите ближайший формат. Если задача смешанная — отметьте «Пока не знаю».</p>
+              <div class="choices" role="radiogroup" aria-label="Формат сайта">
+                <label class="choice">
+                  <input type="radio" name="type" value="landing">
+                  <span class="choice-title">Лендинг</span>
+                  <span class="choice-hint">Один сценарий и заявка</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="type" value="company">
+                  <span class="choice-title">Сайт компании</span>
+                  <span class="choice-hint">Несколько страниц о бизнесе</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="type" value="shop">
+                  <span class="choice-title">Интернет-магазин</span>
+                  <span class="choice-hint">Каталог, корзина, оплата</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="type" value="service">
+                  <span class="choice-title">Веб-сервис</span>
+                  <span class="choice-hint">Кабинеты и интеграции</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="type" value="unsure">
+                  <span class="choice-title">Пока не знаю</span>
+                  <span class="choice-hint">Подскажем формат после брифа</span>
+                </label>
+              </div>
+              <p id="type-error" class="field-error" hidden></p>
+              <p class="note" data-estimate>Выберите формат — покажем ориентир по сроку и бюджету.</p>
+            </div>
+
+            <div class="step" data-step="2" hidden>
+              <h3 class="step-title">Объём, бюджет и срок</h3>
+              <p class="step-help">Примерные рамки. Точную смету подтвердим после брифа, до старта работ.</p>
+              <p class="note" data-estimate>Выберите формат — покажем ориентир по сроку и бюджету.</p>
+              <div class="fields">
+                <label class="field">
+                  <span>Объём</span>
+                  <select name="scale">
+                    <option value="">Выберите</option>
+                    <option value="compact">1–3 экрана</option>
+                    <option value="standard">до 10 страниц</option>
+                    <option value="large">10–30 страниц</option>
+                    <option value="product">кабинет или сложная логика</option>
+                    <option value="unknown">пока не ясно</option>
+                  </select>
+                  <span id="scale-error" class="field-error" hidden></span>
+                </label>
+                <label class="field">
+                  <span>Бюджет</span>
+                  <select name="budget">
+                    <option value="">Выберите</option>
+                    <option value="20">до 20&nbsp;000&nbsp;₽</option>
+                    <option value="50">20–50&nbsp;000&nbsp;₽</option>
+                    <option value="100">50–100&nbsp;000&nbsp;₽</option>
+                    <option value="100plus">от 100&nbsp;000&nbsp;₽</option>
+                    <option value="open">пока не определён</option>
+                  </select>
+                  <span id="budget-error" class="field-error" hidden></span>
+                </label>
+                <label class="field">
+                  <span>Желаемый срок</span>
+                  <select name="deadline">
+                    <option value="">Выберите</option>
+                    <option value="2w">до 2 недель</option>
+                    <option value="month">3–4 недели</option>
+                    <option value="two">1–2 месяца</option>
+                    <option value="flex">срок гибкий</option>
+                  </select>
+                  <span id="deadline-error" class="field-error" hidden></span>
+                </label>
+              </div>
+              <fieldset class="extras">
+                <legend>Добавить к заказу</legend>
+                <div class="extras-grid">
+                  <label><input type="checkbox" name="extras" value="design" data-label="Дизайн с нуля"> Дизайн с нуля</label>
+                  <label><input type="checkbox" name="extras" value="copy" data-label="Тексты"> Тексты</label>
+                  <label><input type="checkbox" name="extras" value="cms" data-label="Админка"> Админка</label>
+                  <label><input type="checkbox" name="extras" value="seo" data-label="Базовое SEO"> Базовое SEO</label>
+                  <label><input type="checkbox" name="extras" value="support" data-label="Поддержка 1 месяц"> Поддержка 1 месяц</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="step" data-step="3" hidden>
+              <h3 class="step-title">Куда ответить и в чём задача</h3>
+              <p class="step-help">Этих данных достаточно, чтобы вернуться со сметой, а не с уточняющим письмом на полстраницы.</p>
+              <div class="fields">
+                <div class="grid-2">
+                  <label class="field">
+                    <span>Имя <i class="req">*</i></span>
+                    <input name="name" type="text" autocomplete="name" maxlength="80" required>
+                    <span id="name-error" class="field-error" hidden></span>
+                  </label>
+                  <label class="field">
+                    <span>Компания</span>
+                    <input name="company" type="text" autocomplete="organization" maxlength="80">
+                  </label>
+                </div>
+                <div class="grid-2">
+                  <label class="field">
+                    <span>Эл. почта <i class="req">*</i></span>
+                    <input name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" required>
+                    <span id="email-error" class="field-error" hidden></span>
+                  </label>
+                  <label class="field">
+                    <span>Телефон или Telegram <i class="req">*</i></span>
+                    <input name="phone" type="text" inputmode="tel" autocomplete="tel" maxlength="40" required>
+                    <span id="phone-error" class="field-error" hidden></span>
+                  </label>
+                </div>
+                <div class="grid-2">
+                  <label class="field">
+                    <span>Удобная связь <i class="req">*</i></span>
+                    <select name="contact" required>
+                      <option value="">Выберите</option>
+                      <option value="email">Почта</option>
+                      <option value="phone">Телефон</option>
+                      <option value="telegram">Telegram</option>
+                    </select>
+                    <span id="contact-error" class="field-error" hidden></span>
+                  </label>
+                  <label class="field">
+                    <span>Сайт-ориентир</span>
+                    <input name="reference" type="text" maxlength="200" placeholder="https://">
+                  </label>
+                </div>
+                <label class="field">
+                  <span>Задача <i class="req">*</i></span>
+                  <textarea name="message" maxlength="1500" required placeholder="Что продаёте, сколько примерно страниц, какие материалы уже есть и к какой дате нужен запуск."></textarea>
+                  <span id="message-error" class="field-error" hidden></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="step" data-step="4" hidden>
+              <h3 class="step-title">Проверьте заказ</h3>
+              <p class="step-help">После подтверждения заявка сохранится в этом браузере. Письмо уйдёт только если вы отправите его из почты.</p>
+              <dl id="summary" class="summary"></dl>
+              <label class="consent">
+                <input type="checkbox" name="consent">
+                <span>Согласен на обработку имени и контактов, чтобы PIXORA ответила на эту заявку.</span>
+              </label>
+              <span id="consent-error" class="field-error" hidden></span>
+            </div>
+
+            <p id="form-error" class="form-error" role="alert" hidden></p>
+            <div class="actions">
+              <button class="btn btn-ghost" id="btn-back" type="button" hidden>Назад</button>
+              <button class="btn btn-ink" id="btn-next" type="button">Дальше</button>
+              <button class="btn btn-ink" id="btn-submit" type="submit" hidden>Подтвердить заказ</button>
+            </div>
+          </form>
+
+          <div id="success" class="success" hidden>
+            <p class="kicker">Заказ принят</p>
+            <p id="success-number" class="success-number"></p>
+            <h3 id="success-title" tabindex="-1"></h3>
+            <p id="success-lead" class="step-help"></p>
+            <dl id="success-summary" class="summary"></dl>
+            <div class="actions">
+              <button class="btn btn-ink" id="copy-order" type="button">Скопировать</button>
+              <a class="btn btn-ghost" id="mail-order" href="#">Открыть письмо</a>
+              <button class="btn btn-ghost" id="new-order" type="button">Новый заказ</button>
+            </div>
+            <p id="copy-note" class="copy-note" hidden>Текст заказа скопирован.</p>
+          </div>
+
+          <div id="orders-block" class="orders-block" hidden>
+            <h3>Заявки в этом браузере</h3>
+            <div id="orders-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section section-tight">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="index">05 — Вопросы</p>
+          <div>
+            <h2>Коротко о работе</h2>
+            <p class="lede">Если нужного ответа нет, напишите его в тексте заказа — разберём в смете.</p>
+          </div>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Работаете с уже готовым дизайном?</summary>
+            <p>Да. Напишите об этом в задаче — оценим вёрстку и запуск отдельно от дизайна. Макет нужен в Figma или в виде согласованных экранов.</p>
+          </details>
+          <details>
+            <summary>Сможем ли мы сами править тексты?</summary>
+            <p>Да. Для лендинга и сайта компании подключаем админку, если отметить её в заказе. Мелкие правки в первые две недели после запуска и так входят в работу.</p>
+          </details>
+          <details>
+            <summary>Что нужно от нас на старте?</summary>
+            <p>Заполненная форма, примеры сайтов, которые нравятся, и материалы: логотип, фото, цены, список услуг. Если части нет — начнём с имеющегося и отметим пробелы в смете.</p>
+          </details>
+          <details>
+            <summary>Как проходит оплата?</summary>
+            <p>Половина до старта, половина перед запуском. Для короткого лендинга можно одной суммой. Эта страница оплату не списывает: она фиксирует заказ и готовит письмо.</p>
+          </details>
+          <details>
+            <summary>С какого момента идёт срок?</summary>
+            <p>Со следующего рабочего дня после подтверждения сметы и первой оплаты. Пока ждём материалы, срок сдвигается на время ожидания — это записано в заказе.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-logo">PIXORA</p>
+          <p>Студия сайтов на заказ. Проект, дизайн, сборка и запуск.</p>
+        </div>
+        <nav aria-label="Разделы в подвале">
+          <a href="#services">Услуги</a>
+          <a href="#process">Процесс</a>
+          <a href="#work">Задачи</a>
+          <a href="#order">Заказ</a>
+          <a href="#faq">Вопросы</a>
+        </nav>
+        <div>
+          <p class="footer-label">Почта</p>
+          <a class="contact-link" data-studio-email href="mailto:hello@pixora.studio">hello@pixora.studio</a>
+          <p class="footer-hours">Пн–пт, 10:00–19:00 МСК<br>Работаем удалённо</p>
+        </div>
+      </div>
+      <div class="fine">
+        <span>© <span id="year">2026</span> PIXORA</span>
+        <span>Имя и контакты из формы нужны только для ответа на заказ. Заявка хранится в браузере, пока вы сами не отправите письмо.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
