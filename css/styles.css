@@ -637,6 +637,23 @@ section[id] { scroll-margin-top: 88px; }
   text-underline-offset: 3px;
 }
 
+.email-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.send-error {
+  margin: 12px 0 0;
+  color: var(--signal);
+  font-size: 14px;
+}
+
+.send-error a {
+  font-weight: 700;
+}
+
 .panel {
   border: 1px solid var(--ink);
   background: var(--card);

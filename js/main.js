@@ -1,8 +1,11 @@
 /* PIXORA
-   Замените STUDIO_EMAIL — на этот адрес откроется письмо с заказом.
-   Заявки хранятся в браузере и не уходят на сервер сами.
+   STUDIO_EMAILS — куда уходит заказ и какие адреса показаны на сайте.
+   Первый адрес получает письмо, второй стоит в копии.
 */
-const STUDIO_EMAIL = "hello@pixora.studio";
+const STUDIO_EMAILS = [
+  "heypixora.projects@gmail.com",
+  "heypixora@mail.ru"
+];
 const STORAGE_KEY = "pixora.orders.v1";
 const DRAFT_KEY = "pixora.draft.v1";
 const TYPES = ["landing", "company", "shop", "service", "unsure"];
@@ -35,9 +38,23 @@ let placing = false;
 let orders = loadOrders();
 let lastOrder = null;
 
-document.querySelectorAll("[data-studio-email]").forEach((el) => {
-  el.textContent = STUDIO_EMAIL;
-  el.href = `mailto:${STUDIO_EMAIL}`;
+function emailLinks(separator) {
+  const fragment = document.createDocumentFragment();
+  STUDIO_EMAILS.forEach((email, index) => {
+    if (index > 0 && separator) fragment.append(document.createTextNode(separator));
+    const link = document.createElement("a");
+    link.className = "contact-link";
+    link.href = `mailto:${email}`;
+    link.textContent = email;
+    fragment.append(link);
+  });
+  return fragment;
+}
+
+document.querySelectorAll("[data-studio-emails]").forEach((el) => {
+  const inline = el.dataset.studioEmails === "inline";
+  el.replaceChildren(emailLinks(inline ? " и " : ""));
+  if (!inline) el.classList.add("email-list");
 });
 
 const year = document.getElementById("year");
@@ -182,7 +199,53 @@ function shortText(order) {
 }
 
 function mailto(body, id) {
-  return `mailto:${STUDIO_EMAIL}?subject=${encodeURIComponent(`Заказ ${id} — PIXORA`)}&body=${encodeURIComponent(body)}`;
+  const to = STUDIO_EMAILS.join(",");
+  return `mailto:${to}?subject=${encodeURIComponent(`Заказ ${id} — PIXORA`)}&body=${encodeURIComponent(body)}`;
+}
+
+function orderPayload(order) {
+  return {
+    _subject: `Заказ ${order.id} — PIXORA`,
+    _template: "table",
+    _captcha: "false",
+    _cc: STUDIO_EMAILS.slice(1).join(","),
+    _replyto: order.email,
+    Заказ: order.id,
+    Имя: order.name,
+    Компания: order.company || "—",
+    Почта: order.email,
+    Телефон: order.phone,
+    Связь: order.contactLabel || "—",
+    Формат: order.typeLabel || "—",
+    Объём: order.scaleLabel || "—",
+    Бюджет: order.budgetLabel || "—",
+    Срок: order.deadlineLabel || "—",
+    Дополнительно: order.extras.length ? order.extras.join(", ") : "—",
+    Ориентир: order.reference || "—",
+    Задача: order.message
+  };
+}
+
+async function sendOrder(order) {
+  const response = await fetch(
+    `https://formsubmit.co/ajax/${encodeURIComponent(STUDIO_EMAILS[0])}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify(orderPayload(order))
+    }
+  );
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok || String(data.success) !== "true") {
+    const raw = String(data.message || "");
+    if (/activat|confirm/i.test(raw)) {
+      throw new Error(`Откройте письмо от FormSubmit на ${STUDIO_EMAILS[0]} и подтвердите приём заявок, затем отправьте заказ ещё раз.`);
+    }
+    throw new Error(raw || "Почта студии не приняла заявку.");
+  }
 }
 
 function mailHref(order) {
@@ -240,6 +303,11 @@ function clearErrors() {
   form.querySelectorAll("[aria-invalid]").forEach((el) => el.removeAttribute("aria-invalid"));
   formError.hidden = true;
   formError.textContent = "";
+  const sendError = document.getElementById("send-error");
+  if (sendError) {
+    sendError.hidden = true;
+    sendError.replaceChildren();
+  }
 }
 
 function focusField(name) {
@@ -412,24 +480,39 @@ function renderOrders() {
 }
 
 function fillSuccess(order) {
+  const where = STUDIO_EMAILS.join(" и ");
   document.getElementById("success-number").textContent = order.id;
-  document.getElementById("success-title").textContent = `${order.name}, заявка сохранена`;
+  document.getElementById("success-title").textContent = `${order.name}, заявка отправлена`;
   document.getElementById("success-lead").textContent =
-    `Письмо откроется на ${STUDIO_EMAIL}. Если почтовая программа не настроена, скопируйте текст и отправьте его сами.`;
+    `Письмо ушло на ${where}. Ответим со сметой и сроком.`;
   renderRows(successSummary, rowsOf(order));
   document.getElementById("mail-order").href = mailHref(order);
   copyNote.hidden = true;
 }
 
-function placeOrder() {
+function showSendError(order, message) {
+  const box = document.getElementById("send-error");
+  box.hidden = false;
+  box.replaceChildren(document.createTextNode(`${message} `));
+  const link = document.createElement("a");
+  link.href = mailHref(order);
+  link.textContent = "Откройте письмо и отправьте его сами.";
+  box.append(link);
+}
+
+async function placeOrder() {
   if (placing) return;
   placing = true;
+  const submitLabel = btnSubmit.textContent;
+  btnSubmit.disabled = true;
+  btnSubmit.textContent = "Отправляем…";
+  const order = {
+    ...readForm(),
+    id: makeId(),
+    createdAt: new Date().toISOString()
+  };
   try {
-    const order = {
-      ...readForm(),
-      id: makeId(),
-      createdAt: new Date().toISOString()
-    };
+    await sendOrder(order);
     lastOrder = order;
     orders.unshift(order);
     let saved = true;
@@ -450,14 +533,18 @@ function placeOrder() {
     fillSuccess(order);
     if (!saved) {
       document.getElementById("success-lead").textContent =
-        "Браузер не дал сохранить заявку локально. Скопируйте текст и отправьте письмо вручную.";
+        `Письмо ушло на ${STUDIO_EMAILS.join(" и ")}. Браузер не сохранил копию на этом устройстве.`;
     }
     success.hidden = false;
     renderOrders();
     success.scrollIntoView({ behavior: "smooth", block: "start" });
     document.getElementById("success-title").focus();
+  } catch (error) {
+    showSendError(order, error.message || "Почта студии не приняла заявку.");
   } finally {
     placing = false;
+    btnSubmit.disabled = false;
+    btnSubmit.textContent = submitLabel;
   }
 }
 

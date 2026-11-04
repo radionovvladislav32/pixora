@@ -276,19 +276,19 @@
         <div class="order-intro">
           <p class="index">04 — Заказ</p>
           <h2>Оформить заказ</h2>
-          <p class="lede">Четыре коротких шага. Заявка останется в этом браузере, а письмо с текстом можно открыть в почте.</p>
+          <p class="lede">Четыре коротких шага. После проверки заказ уходит на почту студии.</p>
           <ol class="after">
             <li>Сохраняем состав заказа на этом устройстве.</li>
-            <li>Готовим письмо на <a data-studio-email href="mailto:hello@pixora.studio">hello@pixora.studio</a>.</li>
+            <li>Отправляем заказ на <span data-studio-emails="inline"></span>.</li>
             <li>Уточняем детали и присылаем смету со сроком.</li>
             <li>Стартуем после вашего подтверждения.</li>
           </ol>
-          <p class="direct">Можно написать напрямую: <a data-studio-email href="mailto:hello@pixora.studio">hello@pixora.studio</a></p>
+          <p class="direct">Можно написать напрямую: <span data-studio-emails="inline"></span></p>
         </div>
 
         <div class="panel">
           <noscript>
-            <p class="noscript">Чтобы собрать заказ по шагам, включите JavaScript. Письмо на почту студии можно отправить и без формы.</p>
+            <p class="noscript">Чтобы отправить заказ, включите JavaScript. Написать можно и напрямую: heypixora.projects@gmail.com и heypixora@mail.ru.</p>
           </noscript>
           <form id="order-form" novalidate>
             <ol class="progress" id="progress">
@@ -438,7 +438,7 @@
 
             <div class="step" data-step="4" hidden>
               <h3 class="step-title">Проверьте заказ</h3>
-              <p class="step-help">После подтверждения заявка сохранится в этом браузере. Письмо уйдёт только если вы отправите его из почты.</p>
+              <p class="step-help">После подтверждения заказ уйдёт на heypixora.projects@gmail.com и heypixora@mail.ru.</p>
               <dl id="summary" class="summary"></dl>
               <label class="consent">
                 <input type="checkbox" name="consent">
@@ -448,6 +448,7 @@
             </div>
 
             <p id="form-error" class="form-error" role="alert" hidden></p>
+            <p id="send-error" class="send-error" role="alert" hidden></p>
             <div class="actions">
               <button class="btn btn-ghost" id="btn-back" type="button" hidden>Назад</button>
               <button class="btn btn-ink" id="btn-next" type="button">Дальше</button>
@@ -501,7 +502,7 @@
           </details>
           <details>
             <summary>Как проходит оплата?</summary>
-            <p>Половина до старта, половина перед запуском. Для короткого лендинга можно одной суммой. Эта страница оплату не списывает: она фиксирует заказ и готовит письмо.</p>
+            <p>Половина до старта, половина перед запуском. Для короткого лендинга можно одной суммой. Эта страница оплату не списывает: она отправляет заказ на почту студии.</p>
           </details>
           <details>
             <summary>С какого момента идёт срок?</summary>
@@ -528,13 +529,13 @@
         </nav>
         <div>
           <p class="footer-label">Почта</p>
-          <a class="contact-link" data-studio-email href="mailto:hello@pixora.studio">hello@pixora.studio</a>
+          <div data-studio-emails="stack"></div>
           <p class="footer-hours">Пн–пт, 10:00–19:00 МСК<br>Работаем удалённо</p>
         </div>
       </div>
       <div class="fine">
         <span>© <span id="year">2026</span> PIXORA</span>
-        <span>Имя и контакты из формы нужны только для ответа на заказ. Заявка хранится в браузере, пока вы сами не отправите письмо.</span>
+        <span>Имя и контакты из формы нужны только для ответа на заказ. Заявка уходит на почту студии.</span>
       </div>
     </div>
   </footer>
